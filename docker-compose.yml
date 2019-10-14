@@ -1,0 +1,18 @@
+
+version: "2"
+services:  
+  node:
+    image: "node:12.10-slim"
+    container_name: "app-crud"   
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./dist:/home/node/app/dist
+    expose:
+      - "8081"
+    ports:
+      - 4400:8081
+    #command: "sudo chmod 777 /home/node/"
+    command: "node ./dist/server.js"
