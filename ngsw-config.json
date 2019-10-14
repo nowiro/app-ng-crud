@@ -1,8 +1,7 @@
 {
   "$schema": "./node_modules/@angular/service-worker/config/schema.json",
   "index": "/index.html",
-  "assetGroups": [
-    {
+  "assetGroups": [{
       "name": "app",
       "installMode": "prefetch",
       "resources": {
@@ -28,17 +27,15 @@
   ],
 
 
-  "dataGroups": [
-    {
-      "name": "from-api",
-      "version": 2,
-      "urls": ["ngsw.json"],
-      "cacheConfig": {
-        "strategy": "performance",
-        "maxSize": 10,
-        "maxAge": "1h",
-        "timeout": "3s"
-      }
+  "dataGroups": [{
+    "name": "from-api",
+    "version": 2,
+    "urls": ["ngsw.json"],
+    "cacheConfig": {
+      "strategy": "performance",
+      "maxSize": 10,
+      "maxAge": "1h",
+      "timeout": "3s"
     }
-  ]
+  }]
 }

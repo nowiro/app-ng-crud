@@ -13,7 +13,7 @@ export class AboutComponent implements OnInit {
     this.meta.updateTag({ name: 'description', content: 'About page' });
     this.meta.updateTag({ name: 'keywords', content: 'Angular, About' });
   }
-  
+
   ngOnInit() {
   }
 

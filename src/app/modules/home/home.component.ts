@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
     this.meta.updateTag({ name: 'description', content: 'Home page' });
     this.meta.updateTag({ name: 'keywords', content: 'Angular, Home' });
   }
- 
+
   ngOnInit() {
   }
 
