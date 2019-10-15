@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from "@angular/router";
-import { User } from "../../../model/user.model";
-import { ApiService } from "../../../service/api.service";
+import { User } from "../../../core/model/user.model";
+import { ApiServiceUser } from "../../../core/service/api.service.user";
 import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
@@ -13,12 +13,12 @@ export class ListUserComponent implements OnInit {
 
   users: User[];
 
-  constructor(private router: Router, private apiService: ApiService, private titleService: Title, private meta: Meta) {
+  constructor(private router: Router, private apiService: ApiServiceUser, private titleService: Title, private meta: Meta) {
     this.titleService.setTitle('List user');
     this.meta.updateTag({ name: 'description', content: 'List user page' });
     this.meta.updateTag({ name: 'keywords', content: 'Angular, List user' });
   }
-  
+
 
   ngOnInit() {
     if (!window.localStorage.getItem('token')) {

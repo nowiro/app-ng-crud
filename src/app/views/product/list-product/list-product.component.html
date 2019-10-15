@@ -1,0 +1,29 @@
+<div>
+    <div class="fa-3x" *ngIf="isLoadingResults">
+        <i class="fas fa-spinner fa-spin"></i>
+      </div>
+  <div>
+    <a class="btn btn-primary" [routerLink]="['/product/add']">
+      <i class="fas fa-plus-circle"></i>
+    </a>
+  </div>
+  <div>
+    <!-- <table mat-table [dataSource]="data" class="wn-table" matSort matSortActive="prod_name" matSortDisableClear
+      matSortDirection="asc">
+
+      <ng-container matColumnDef="prod_name">
+        <th mat-header-cell *matHeaderCellDef>Product Name</th>
+        <td mat-cell *matCellDef="let row">{{row.prod_name}}</td>
+      </ng-container>
+
+ 
+      <ng-container matColumnDef="prod_price">
+        <th mat-header-cell *matHeaderCellDef>Product Price</th>
+        <td mat-cell *matCellDef="let row">{{row.prod_price}} PLN</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/detail-products/', row._id]"></tr>
+    </table> -->
+  </div>
+</div>

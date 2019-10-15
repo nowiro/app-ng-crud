@@ -1,0 +1,15 @@
+{
+  "APP_NAME": "Test APP",
+  "About": "Opis",
+  "Home": "Strona główna",
+  "Logged in as": "Jesteś zalogowany jako",
+  "Login": "Zaloguj",
+  "Logout": "Wyloguj",
+  "Password": "Hasło",
+  "Password is required": "Hasło jest wymagane",
+  "Username": "Nazwa użytkownika",
+  "Username is required": "Nazwa użytkownika jest wymagana",
+  "Username or password incorrect.": "Nazwa użytkownika lub hasło jest niepoprawne.",
+  "Remember me": "Zapamietaj mnie",
+  "Version": "Wersja"
+}

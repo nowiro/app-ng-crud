@@ -2,8 +2,8 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from "@angular/router";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { first } from "rxjs/operators";
-import { User } from "../../../model/user.model";
-import { ApiService } from "../../../service/api.service";
+import { User } from "../../../core/model/user.model";
+import { ApiServiceUser } from "../../../core/service/api.service.user";
 import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
@@ -15,12 +15,12 @@ export class EditUserComponent implements OnInit {
 
   user: User;
   editForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private router: Router, private apiService: ApiService, private titleService: Title, private meta: Meta) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private apiService: ApiServiceUser, private titleService: Title, private meta: Meta) {
     this.titleService.setTitle('Edit user');
     this.meta.updateTag({ name: 'description', content: 'Edit user page' });
     this.meta.updateTag({ name: 'keywords', content: 'Angular, Edit user' });
   }
-  
+
   ngOnInit() {
     let userId = window.localStorage.getItem("editUserId");
     if (!userId) {

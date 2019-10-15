@@ -1,14 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 //import { AppComponent } from './app.component';
-import { ContactComponent } from './modules/contact/contact.component';
-import { AboutComponent } from './modules/about/about.component';
-import { PageNotFoundComponent } from './modules/page-not-found/page-not-found.component';
-import { HomeComponent } from './modules/home/home.component';
-import { LoginComponent } from "./modules/login/login.component";
-import { AddUserComponent } from "./modules/user/add-user/add-user.component";
-import { ListUserComponent } from "./modules/user/list-user/list-user.component";
-import { EditUserComponent } from "./modules/user/edit-user/edit-user.component";
+import { ContactComponent } from './views/contact/contact.component';
+import { AboutComponent } from './views/about/about.component';
+import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
+import { HomeComponent } from './views/home/home.component';
+
+import { LoginComponent } from "./views/login/login.component";
+
+import { AddUserComponent } from "./views/user/add-user/add-user.component";
+import { ListUserComponent } from "./views/user/list-user/list-user.component";
+import { EditUserComponent } from "./views/user/edit-user/edit-user.component";
+
+import { ListProductComponent } from './views/product/list-product/list-product.component';
+import { DetailProductComponent } from './views/product/detail-product/detail-product.component';
+import { AddProductComponent } from './views/product/add-product/add-product.component';
+import { EditProductComponent } from './views/product/edit-product/edit-product.component';
 
 const routes: Routes = [
 
@@ -17,6 +24,10 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
     data: { title: 'Main page' }
+  },
+  {
+    path: '',
+    component: LoginComponent
   },
   {
     path: 'about',
@@ -34,25 +45,51 @@ const routes: Routes = [
     data: { title: 'Login' }
   },
   {
-    path: 'add-user',
+    path: 'user/add',
     component: AddUserComponent,
     data: { title: 'Add user' }
   },
   {
-    path: 'list-user',
+    path: 'user',
     component: ListUserComponent,
     data: { title: 'User list' }
   },
   {
-    path: 'edit-user',
+    path: 'user/edit',
     component: EditUserComponent,
     data: {
       title: 'Edit user'
     }
   },
   {
-    path: '',
-    component: LoginComponent
+    path: 'user/list',
+    redirectTo: '/user',
+    pathMatch: 'full'
+  },
+  {
+    path: 'product',
+    component: ListProductComponent,
+    data: { title: 'List of Products' }
+  },
+  {
+    path: 'product/detail/:id',
+    component: DetailProductComponent,
+    data: { title: 'Detail Product' }
+  },
+  {
+    path: 'product/add',
+    component: AddProductComponent,
+    data: { title: 'Add Product' }
+  },
+  {
+    path: 'product/edit/:id',
+    component: EditProductComponent,
+    data: { title: 'Edit Product' }
+  },
+  {
+    path: 'product/list',
+    redirectTo: '/product',
+    pathMatch: 'full'
   },
   {
     path: '**',

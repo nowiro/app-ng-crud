@@ -1,0 +1,33 @@
+<div>
+
+  <div class="fa-3x" *ngIf="isLoadingResults">
+    <i class="fas fa-spinner fa-spin"></i>
+  </div>
+  <div class="btn-group" role="group">
+    <a color="btn btn-primary" [routerLink]="['/product']">
+      List
+    </a>
+  </div>
+  <div>
+    <div>
+      <h2>{{product.prod_name}}</h2>
+      <p>{{product.prod_desc}}</p>
+    </div>
+    <div>
+      <dl>
+        <dt>Product Price:</dt>
+        <dd>{{product.prod_price}}</dd>
+        <dt>Updated At:</dt>
+        <dd>{{product.updated_at | date}}</dd>
+      </dl>
+    </div>
+    <div>
+      <a class="btn btn-primary" [routerLink]="['/product/edit', product._id]">
+        <i class="fas fa-edit">edit</i>
+      </a>
+      <a class="btn btn-danger" (click)="deleteProduct(product._id)">
+        <i class="fas fa-trash">delate</i>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-import { ApiService } from "../../service/api.service";
+import { ApiServiceUser } from "../../core/service/api.service.user";
 import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
@@ -13,12 +13,12 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   invalidLogin: boolean = false;
-  constructor(private formBuilder: FormBuilder, private router: Router, private apiService: ApiService, private titleService: Title, private meta: Meta) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private apiService: ApiServiceUser, private titleService: Title, private meta: Meta) {
     this.titleService.setTitle('Login');
     this.meta.updateTag({ name: 'description', content: 'Login page' });
     this.meta.updateTag({ name: 'keywords', content: 'Angular, Login' });
   }
-  
+
   onSubmit() {
     if (this.loginForm.invalid) {
       return;
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
       debugger;
       if (data.status === 200) {
         window.localStorage.setItem('token', data.result.token);
-        this.router.navigate(['list-user']);
+        this.router.navigate(['user']);
       } else {
         this.invalidLogin = true;
         alert(data.message);

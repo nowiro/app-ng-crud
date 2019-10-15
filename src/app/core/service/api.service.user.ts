@@ -5,7 +5,7 @@ import { Observable } from "rxjs/index";
 import { ApiResponse } from "../model/api.response";
 
 @Injectable()
-export class ApiService {
+export class ApiServiceUser {
 
   constructor(private http: HttpClient) { }
   baseUrl: string = '/';
