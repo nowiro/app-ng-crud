@@ -16,6 +16,7 @@ import { ListProductComponent } from './views/product/list-product/list-product.
 import { DetailProductComponent } from './views/product/detail-product/detail-product.component';
 import { AddProductComponent } from './views/product/add-product/add-product.component';
 import { EditProductComponent } from './views/product/edit-product/edit-product.component';
+import { ChatComponent } from './views/chat/chat.component';
 
 const routes: Routes = [
 
@@ -28,6 +29,11 @@ const routes: Routes = [
   {
     path: '',
     component: LoginComponent
+  },
+  {
+    path: 'chat',
+    component: ChatComponent,
+    data: { title: 'Chat' }
   },
   {
     path: 'about',

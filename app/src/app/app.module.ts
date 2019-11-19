@@ -21,6 +21,9 @@ import { AddProductComponent } from './views/product/add-product/add-product.com
 import { EditProductComponent } from './views/product/edit-product/edit-product.component';
 import { DetailProductComponent } from './views/product/detail-product/detail-product.component';
 import { ListProductComponent } from './views/product/list-product/list-product.component';
+import { WebsocketService } from "./core/service/websocket.service";
+import { ChatService } from "./core/service/chat.service";
+import { ChatComponent } from './views/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,8 @@ import { ListProductComponent } from './views/product/list-product/list-product.
     AddProductComponent,
     ListProductComponent,
     EditProductComponent,
-    DetailProductComponent
+    DetailProductComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -45,7 +49,7 @@ import { ListProductComponent } from './views/product/list-product/list-product.
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ApiServiceUser, {
+  providers: [ApiServiceUser, WebsocketService, ChatService, {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptor,
     multi: true
