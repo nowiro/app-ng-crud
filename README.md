@@ -3,4 +3,4 @@ tsc --init
 yarn init
 
 ## Git flow
-![Image](./docs/git-flow-nvie.png){:.some-css-class width="200"}
+![Image](./docs/git-flow-nvie.png)
