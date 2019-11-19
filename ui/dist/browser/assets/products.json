@@ -1,0 +1,13 @@
+[{
+  "_id": 1,
+  "prod_name": "Product 1",
+  "prod_desc": "Product 1 desc",
+  "prod_price": "11",
+  "updated_at": null
+}, {
+  "_id": 2,
+  "prod_name": "Product 2",
+  "prod_desc": "Product 2 desc",
+  "prod_price": "12",
+  "updated_at": null
+}]
