@@ -21,8 +21,8 @@ import { AddProductComponent } from './views/product/add-product/add-product.com
 import { EditProductComponent } from './views/product/edit-product/edit-product.component';
 import { DetailProductComponent } from './views/product/detail-product/detail-product.component';
 import { ListProductComponent } from './views/product/list-product/list-product.component';
-import { WebsocketService } from "./core/service/websocket.service";
-import { ChatService } from "./core/service/chat.service";
+import { WebsocketService } from "./core/service/api.websocket.service";
+import { ChatService } from "./core/service/api.chat.service";
 import { ChatComponent } from './views/chat/chat.component';
 
 @NgModule({

@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
-import { WebsocketService } from "../../core/service/websocket.service";
-import { ChatService } from "../../core/service/chat.service";
+import { WebsocketService } from "../../core/service/api.websocket.service";
+import { ChatService } from "../../core/service/api.chat.service";
 
 @Component({
   selector: "chat-root",
