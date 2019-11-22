@@ -3,7 +3,7 @@ import { Observable, Subject } from "rxjs/Rx";
 import { Observer } from "rxjs/Observer";
 
 
-@Injectable()
+@Injectable( )
 export class WebsocketService {
   constructor() { }
 
