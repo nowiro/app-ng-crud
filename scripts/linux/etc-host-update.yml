@@ -1,0 +1,6 @@
+sudo nano /etc/hostname
+sudo nano /etc/hosts
+
+sudo systemctl restart networking
+sudo systemctl restart networking.service
+#systemctl restart systemd-logind.service

@@ -1,0 +1,184 @@
+# ===============
+sudo systemctl restart systemd-timesyncd.service
+sudo apt update
+sudo apt upgrade
+sudo apt autoremove
+# ===============
+
+
+
+# ===============
+# curl
+# ===============
+sudo apt-get install curl
+# ===============
+
+
+
+# ===============
+# vbox
+# ===============
+sudo apt install -y virtualbox virtualbox-ext-pack
+sudo /sbin/vboxconfig
+# ===============
+
+
+
+
+# ===============
+# docker
+# ===============
+
+# uninstall Docker Engine - Community
+sudo apt-get purge docker-ce
+sudo rm -rf /var/lib/docker
+
+# install
+sudo apt-get remove docker docker-engine docker.io containerd runc
+sudo apt-get update
+sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo apt-key fingerprint 0EBFCD88
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+sudo apt-cache madison docker-ce
+# docker test
+sudo docker run hello-world
+# ===============
+
+
+
+
+# ===============
+# git
+# ===============
+sudo apt-get install git
+# ===============
+
+
+
+# ===============
+# chrome
+# ===============
+sudo apt install gdebi-core
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt update
+sudo gdebi google-chrome-stable_current_amd64.deb
+# ===============
+
+
+
+# ===============
+# vs code
+# ===============
+sudo apt install software-properties-common apt-transport-https wget
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+sudo apt update
+sudo apt install code
+# ===============
+
+
+
+# ===============
+# kubectl
+# ===============
+curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+chmod +x kubectl
+sudo mv /usr/local/bin/kubectl /usr/local/bin/kubectl.bak
+sudo mv -v kubectl /usr/local/bin
+kubectl version --short
+# ===============
+
+
+
+
+# ===============
+# minikube
+# ===============
+
+sudo minikube stop
+sudo minikube delete
+
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+chmod +x minikube
+sudo mv /usr/local/bin/minikube /usr/local/bin/minikube.bak
+sudo mv -v minikube /usr/local/bin
+
+if [ "$1" == "-vndrivernone"  ];
+then
+    sudo minikube start --vm-driver=none --memory='5000mb'
+else
+    sudo minikube start --vm-driver=virtualbox --memory='5000mb'
+fi
+
+# ===============
+
+
+
+# ===============
+# terminator
+# ===============
+sudo apt install terminator -y
+# ===============
+
+
+
+# ===============
+# kubed
+# ===============
+curl -s -L https://github.com/mhausenblas/kubed-sh/releases/download/0.5.1/kubed-sh-linux -o kubed-sh
+chmod +x kubed-sh
+sudo mv kubed-sh /usr/local/bin
+# ===============
+
+
+
+
+# ===============
+# nodejs
+# ===============
+curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+sudo apt update
+sudo apt-get install -y nodejs
+# ===============
+
+
+# ===============
+# yarn
+# ===============
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update
+sudo apt install yarn
+# ===============
+
+
+
+# ===============
+# yarn cli
+# ===============
+yarn global add npm-check-updates
+yarn global add @angular/cli
+yarn global add webpack-cli
+# ===============
+
+
+
+# ===============
+# gimp
+# ===============
+sudo add-apt-repository ppa:otto-kesselgulasch/gimp
+sudo apt update
+sudo apt-get install gimp
+# ===============
+
+
+
+# ===============
+sudo systemctl restart systemd-timesyncd.service
+sudo apt update
+sudo apt upgrade
+sudo apt autoremove
+# ===============

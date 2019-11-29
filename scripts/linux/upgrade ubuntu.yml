@@ -1,0 +1,14 @@
+# Setting up snapd (2.41+19.10.1) ...
+# Installing new version of config file /etc/apparmor.d/usr.lib.snapd.snap-confine.real ...
+# Installing new version of config file /etc/xdg/autostart/snap-userd-autostart.desktop ...
+# snapd.failure.service is a disabled or a static unit, not starting it.
+# snapd.snap-repair.service is a disabled or a static unit, not starting it.
+sudo systemctl restart systemd-timesyncd.service
+sudo apt update
+sudo apt upgrade
+sudo apt dist-upgrade
+sudo apt autoremove
+#sudo apt-get install snmp snmp-mibs-downloader
+sudo do-release-upgrade
+reboot
+
