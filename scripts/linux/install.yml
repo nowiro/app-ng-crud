@@ -156,13 +156,6 @@ sudo apt install yarn
 
 
 
-# ===============
-# yarn cli
-# ===============
-yarn global add npm-check-updates
-yarn global add @angular/cli
-yarn global add webpack-cli
-# ===============
 
 
 

@@ -1,9 +1,8 @@
-
 version: "2"
-services:  
+services:
   node:
     image: "node:12.10-slim"
-    container_name: "app-crud"   
+    container_name: "app-crud"
     user: "node"
     working_dir: /home/node/app
     environment:

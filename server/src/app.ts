@@ -8,7 +8,7 @@ app.use(express.json());
 app.set("port", process.env.PORT || 3000);
 
 // API Endpoints
-app.get("/", (req: Request, res: Response) => res.send("hi"))
+app.get("/", (req: Request, res: Response) => res.send("hi"));
 
 // API Endpoints
 app.get("/books", bookController.allBooks);

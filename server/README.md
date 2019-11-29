@@ -1,3 +1,3 @@
 # STEPS
-. run-stack.sh
 
+. run-stack.sh

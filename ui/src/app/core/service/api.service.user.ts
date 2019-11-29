@@ -1,17 +1,19 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 import { User } from "../model/user.model";
 import { Observable } from "rxjs/index";
 import { ApiResponse } from "../model/api.response";
 
 @Injectable()
 export class ApiServiceUser {
-
-  constructor(private http: HttpClient) { }
-  baseUrl: string = '/';
+  constructor(private http: HttpClient) {}
+  baseUrl: string = "/";
 
   login(loginPayload): Observable<ApiResponse> {
-    return this.http.post<ApiResponse>('/' + 'token/generate-token', loginPayload);
+    return this.http.post<ApiResponse>(
+      "/" + "token/generate-token",
+      loginPayload
+    );
   }
 
   getUsers(): Observable<ApiResponse> {

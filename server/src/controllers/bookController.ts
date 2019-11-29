@@ -55,7 +55,7 @@ export let addBook = (req: Request, res: Response) => {
   console.log(book);
   book.save((err: any) => {
     if (err) {
-      console.log(err)
+      console.log(err);
       res.send(err);
     } else {
       console.log(book);
