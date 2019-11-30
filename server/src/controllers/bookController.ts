@@ -1,13 +1,13 @@
 // controllers/bookController.ts
-import { Request, Response } from "express";
-import Book from "./../book";
+import { Request, Response } from 'express';
+import Book from './../book';
 
 // We'll start with allBooks which will return
 // every we have from our database
 export let allBooks = (req: Request, res: Response) => {
   let books = Book.find((err: any, books: any) => {
     if (err) {
-      res.send("Error!");
+      res.send('Error!');
     } else {
       res.send(books);
     }
@@ -29,7 +29,7 @@ export let deleteBook = (req: Request, res: Response) => {
     if (err) {
       res.send(err);
     } else {
-      res.send("Succesfully Deleted Book");
+      res.send('Succesfully Deleted Book');
     }
   });
 };
@@ -43,7 +43,7 @@ export let updateBook = (req: Request, res: Response) => {
       if (err) {
         res.send(err);
       } else {
-        res.send("Succesfully updated book!");
+        res.send('Succesfully updated book!');
       }
     }
   );
