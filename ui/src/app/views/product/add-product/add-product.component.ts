@@ -1,6 +1,6 @@
-import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
-import { ApiServiceProduct } from "../../../core/service/api.service.product";
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiServiceProduct } from '../../../core/service/api.service.product';
 import {
   FormControl,
   FormGroupDirective,
@@ -8,19 +8,19 @@ import {
   FormGroup,
   NgForm,
   Validators
-} from "@angular/forms";
-import { Title, Meta } from "@angular/platform-browser";
+} from '@angular/forms';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
-  selector: "app-add-product",
-  templateUrl: "./add-product.component.html",
-  styleUrls: ["./add-product.component.scss"]
+  selector: 'app-add-product',
+  templateUrl: './add-product.component.html',
+  styleUrls: ['./add-product.component.scss']
 })
 export class AddProductComponent implements OnInit {
   productForm: FormGroup;
-  prod_name: string = "";
-  prod_desc: string = "";
-  prod_price: number = null;
+  productName = '';
+  productDesc = '';
+  productPrice = null;
   isLoadingResults = false;
 
   constructor(
@@ -30,16 +30,16 @@ export class AddProductComponent implements OnInit {
     private titleService: Title,
     private meta: Meta
   ) {
-    this.titleService.setTitle("Add product");
-    this.meta.updateTag({ name: "description", content: "Add product page" });
-    this.meta.updateTag({ name: "keywords", content: "Angular, Add product" });
+    this.titleService.setTitle('Add product');
+    this.meta.updateTag({ name: 'description', content: 'Add product page' });
+    this.meta.updateTag({ name: 'keywords', content: 'Angular, Add product' });
   }
 
   ngOnInit() {
     this.productForm = this.formBuilder.group({
-      prod_name: [null, Validators.required],
-      prod_desc: [null, Validators.required],
-      prod_price: [null, Validators.required]
+      productName: [null, Validators.required],
+      productDesc: [null, Validators.required],
+      productPrice: [null, Validators.required]
     });
   }
 
@@ -47,9 +47,9 @@ export class AddProductComponent implements OnInit {
     this.isLoadingResults = true;
     this.api.addProduct(form).subscribe(
       res => {
-        let id = res["_id"];
+        const resId = res.productId;
         this.isLoadingResults = false;
-        this.router.navigate(["/detail-products", id]);
+        this.router.navigate(['/detail-products', resId]);
       },
       err => {
         console.log(err);

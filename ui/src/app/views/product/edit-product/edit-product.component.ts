@@ -1,7 +1,7 @@
-import { Component, OnInit } from "@angular/core";
-import { Router, ActivatedRoute } from "@angular/router";
-import { ApiServiceProduct } from "../../../core/service/api.service.product";
-import { Product } from "../../../core/model/product";
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ApiServiceProduct } from '../../../core/service/api.service.product';
+import { Product } from '../../../core/model/product';
 import {
   FormControl,
   FormGroupDirective,
@@ -9,20 +9,20 @@ import {
   FormGroup,
   NgForm,
   Validators
-} from "@angular/forms";
-import { Title, Meta } from "@angular/platform-browser";
+} from '@angular/forms';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
-  selector: "app-edit-product",
-  templateUrl: "./edit-product.component.html",
-  styleUrls: ["./edit-product.component.scss"]
+  selector: 'app-edit-product',
+  templateUrl: './edit-product.component.html',
+  styleUrls: ['./edit-product.component.scss']
 })
 export class EditProductComponent implements OnInit {
   productForm: FormGroup;
-  _id: string = "";
-  prod_name: string = "";
-  prod_desc: string = "";
-  prod_price: number = null;
+  productId = '';
+  productName = '';
+  productDesc = '';
+  productPrice: number = null;
   isLoadingResults = false;
 
   constructor(
@@ -33,41 +33,41 @@ export class EditProductComponent implements OnInit {
     private titleService: Title,
     private meta: Meta
   ) {
-    this.titleService.setTitle("Edit product");
-    this.meta.updateTag({ name: "description", content: "Edit product page" });
+    this.titleService.setTitle('Edit product');
+    this.meta.updateTag({ name: 'description', content: 'Edit product page' });
     this.meta.updateTag({
-      name: "keywords",
-      content: "Angular, Edit product page"
+      name: 'keywords',
+      content: 'Angular, Edit product page'
     });
   }
 
   ngOnInit() {
-    this.getProduct(this.route.snapshot.params["id"]);
+    this.getProduct(this.route.snapshot.params.id);
     this.productForm = this.formBuilder.group({
-      prod_name: [null, Validators.required],
-      prod_desc: [null, Validators.required],
-      prod_price: [null, Validators.required]
+      productName: [null, Validators.required],
+      productDesc: [null, Validators.required],
+      productPrice: [null, Validators.required]
     });
   }
 
   getProduct(id) {
     this.api.getProduct(id).subscribe(data => {
-      this._id = data._id;
+      this.productId = data.productId;
       this.productForm.setValue({
-        prod_name: data.prod_name,
-        prod_desc: data.prod_desc,
-        prod_price: data.prod_price
+        productName: data.productName,
+        productDesc: data.productDesc,
+        productPrice: data.productPrice
       });
     });
   }
 
   onFormSubmit(form: NgForm) {
     this.isLoadingResults = true;
-    this.api.updateProduct(this._id, form).subscribe(
+    this.api.updateProduct(this.productId, form).subscribe(
       res => {
-        let id = res["_id"];
+        const resId = res._id;
         this.isLoadingResults = false;
-        this.router.navigate(["/detail-products", id]);
+        this.router.navigate(['/detail-products', resId]);
       },
       err => {
         console.log(err);
@@ -77,6 +77,6 @@ export class EditProductComponent implements OnInit {
   }
 
   productDetails() {
-    this.router.navigate(["/detail-products", this._id]);
+    this.router.navigate(['/detail-products', this.productId]);
   }
 }

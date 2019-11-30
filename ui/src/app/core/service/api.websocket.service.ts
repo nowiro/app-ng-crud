@@ -1,6 +1,7 @@
-import { Injectable } from "@angular/core";
-import { Observable, Subject } from "rxjs/Rx";
-import { Observer } from "rxjs/Observer";
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
+import { Observer } from 'rxjs/Observer';
 
 @Injectable()
 export class WebsocketService {
@@ -11,7 +12,7 @@ export class WebsocketService {
   public connect(url): Subject<MessageEvent> {
     if (!this.subject) {
       this.subject = this.create(url);
-      console.log("Successfully connected: " + url);
+      console.log('Successfully connected: ' + url);
     }
     return this.subject;
   }

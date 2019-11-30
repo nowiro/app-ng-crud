@@ -8,27 +8,67 @@
     </a>
   </div>
   <div>
-    <form [formGroup]="productForm" (ngSubmit)="onFormSubmit(productForm.value)">
+    <form
+      [formGroup]="productForm"
+      (ngSubmit)="onFormSubmit(productForm.value)"
+    >
       <div class="form-group">
-        <input matInput placeholder="Product Name" formControlName="prod_name">
-        <div class="alert alert-danger" role="alert"
-          *ngIf="!productForm.get('prod_name').valid && productForm.get('prod_name').touched">Please enter Product
-          Name</div>
+        <input
+          matInput
+          placeholder="Product Name"
+          formControlName="productName"
+        />
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="
+            !productForm.get('productName').valid &&
+            productForm.get('productName').touched
+          "
+        >
+          Please enter Product Name
+        </div>
       </div>
       <div class="form-group">
-        <input matInput placeholder="Product Desc" formControlName="prod_desc">
-        <div class="alert alert-danger" role="alert"
-          *ngIf="!productForm.get('prod_desc').valid && productForm.get('prod_desc').touched">Please enter Product
-          Description </div>
+        <input
+          matInput
+          placeholder="Product Desc"
+          formControlName="productDesc"
+        />
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="
+            !productForm.get('productDesc').valid &&
+            productForm.get('productDesc').touched
+          "
+        >
+          Please enter Product Description
+        </div>
       </div>
       <div class="form-group">
-        <input matInput placeholder="Product Price" formControlName="prod_price">
-        <div class="alert alert-danger" role="alert"
-          *ngIf="!productForm.get('prod_price').valid && productForm.get('prod_price').touched">Please enter
-          Product Price </div>
+        <input
+          matInput
+          placeholder="Product Price"
+          formControlName="productPrice"
+        />
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="
+            !productForm.get('productPrice').valid &&
+            productForm.get('productPrice').touched
+          "
+        >
+          Please enter Product Price
+        </div>
       </div>
       <div class="button-row">
-        <button type="submit" [disabled]="!productForm.valid" class="btn btn-primary">
+        <button
+          type="submit"
+          [disabled]="!productForm.valid"
+          class="btn btn-primary"
+        >
           <i class="fas fa-save">save</i>
         </button>
       </div>

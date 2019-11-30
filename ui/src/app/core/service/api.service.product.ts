@@ -1,28 +1,28 @@
-import { Injectable } from "@angular/core";
-import { Observable, of, throwError } from "rxjs";
+import { Injectable } from '@angular/core';
+import { Observable, of, throwError } from 'rxjs';
 import {
   HttpClient,
   HttpHeaders,
   HttpErrorResponse
-} from "@angular/common/http";
-import { catchError, tap, map } from "rxjs/operators";
-import { Product } from "../model/product";
+} from '@angular/common/http';
+import { catchError, tap, map } from 'rxjs/operators';
+import { Product } from '../model/product';
 
 const httpOptions = {
-  headers: new HttpHeaders({ "Content-Type": "application/json" })
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
-const apiUrl = "/assets/products.json";
+const apiUrl = '/assets/products.json';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class ApiServiceProduct {
   constructor(private http: HttpClient) {}
 
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(apiUrl).pipe(
-      tap(products => console.log("Fetch products")),
-      catchError(this.handleError("getProducts", []))
+      tap(products => console.log('Fetch products')),
+      catchError(this.handleError('getProducts', []))
     );
   }
 
@@ -36,10 +36,10 @@ export class ApiServiceProduct {
 
   addProduct(product): Observable<Product> {
     return this.http.post<Product>(apiUrl, product, httpOptions).pipe(
-      tap((product: Product) =>
-        console.log(`added product w/ id=${product._id}`)
+      tap((prod: Product) =>
+        console.log(`added product w/ id=${prod.productId}`)
       ),
-      catchError(this.handleError<Product>("addProduct"))
+      catchError(this.handleError<Product>('addProduct'))
     );
   }
 
@@ -47,7 +47,7 @@ export class ApiServiceProduct {
     const url = `${apiUrl}/${id}`;
     return this.http.put(url, product, httpOptions).pipe(
       tap(_ => console.log(`updated product id=${id}`)),
-      catchError(this.handleError<any>("updateProduct"))
+      catchError(this.handleError<any>('updateProduct'))
     );
   }
 
@@ -56,11 +56,11 @@ export class ApiServiceProduct {
 
     return this.http.delete<Product>(url, httpOptions).pipe(
       tap(_ => console.log(`deleted product id=${id}`)),
-      catchError(this.handleError<Product>("deleteProduct"))
+      catchError(this.handleError<Product>('deleteProduct'))
     );
   }
 
-  private handleError<T>(operation = "operation", result?: T) {
+  private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
 
