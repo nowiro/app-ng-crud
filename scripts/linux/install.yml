@@ -168,6 +168,16 @@ sudo apt-get install gimp
 # ===============
 
 
+# ===============
+# hyper terminal
+# ===============
+sudo apt-get install gdebi
+wget https://hyper-updates.now.sh/download/linux_deb
+sudo gdebi linux_deb
+# ===============
+
+
+
 
 # ===============
 sudo systemctl restart systemd-timesyncd.service

@@ -1,54 +1,63 @@
 {
-	"folders": [{
-		"path": "."
-	}],
-	"settings": {
-		"eslint.autoFixOnSave": true,
-		"eslint.alwaysShowStatus": true,
-		"git.autofetch": true,
-		"files.autoSave": "afterDelay",
-		"files.autoSaveDelay": 5000,
-		"eslint.packageManager": "yarn",
-		"eslint.enable": true,
-		"yaml.format.singleQuote": true,
-		"scssFormatter.singleQuote": true,
-		"prettier.singleQuote": true
-	},
-	"extensions": {
-		"recommendations": [
-			"abusaidm.html-snippets",
-			"dbaeumer.vscode-eslint",
-			"donjayamanne.githistory",
-			"eamodio.gitlens",
-			"ecmel.vscode-html-css",
-			"esbenp.prettier-vscode",
-			"HookyQR.beautify",
-			"jbockle.jbockle-format-files",
-			"johnpapa.Angular2",
-			"Mikael.Angular-BeastCode",
-			"ms-azuretools.vscode-docker",
-			"ms-kubernetes-tools.vscode-kubernetes-tools",
-			"ms-python.python",
-			"ms-vscode-remote.remote-wsl",
-			"ms-vscode.csharp",
-			"ms-vscode.node-debug",
-			"ms-vscode.node-debug2",
-			"ms-vscode.powershell",
-			"ms-vscode.references-view",
-			"msjsdiag.debugger-for-chrome",
-			"redhat.vscode-yaml",
-			"sibiraj-s.vscode-scss-formatter",
-			"tht13.python",
-			"VisualStudioExptTeam.vscodeintellicode"
-		]
-	},
-	"launch": {
-		"configurations": [],
-		"compounds": []
-	},
-	"remoteAuthority": "",
-	"tasks": {
-		"version": "2.0.0",
-		"tasks": []
-	}
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "eslint.alwaysShowStatus": true,
+    "eslint.autoFixOnSave": true,
+    "eslint.enable": true,
+    "eslint.packageManager": "yarn",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 5000,
+    "git.autofetch": true,
+    "git.autofetchPeriod": 300,
+    "javascript.preferences.quoteStyle": "single",
+    "prettier.jsxSingleQuote": true,
+    "prettier.singleQuote": true,
+    "prettier.trailingComma": "none",
+    "scssFormatter.singleQuote": true,
+    "tslint.jsEnable": true,
+    "tslint.packageManager": "yarn",
+    "typescript.preferences.quoteStyle": "single",
+    "yaml.format.singleQuote": true
+  },
+  "extensions": {
+    "recommendations": [
+      "abusaidm.html-snippets",
+      "HookyQR.beautify",
+      "dbaeumer.vscode-eslint",
+      "donjayamanne.githistory",
+      "eamodio.gitlens",
+      "ecmel.vscode-html-css",
+      "esbenp.prettier-vscode",
+      "jbockle.jbockle-format-files",
+      "johnpapa.Angular2",
+      "Mikael.Angular-BeastCode",
+      "ms-azuretools.vscode-docker",
+      "ms-kubernetes-tools.vscode-kubernetes-tools",
+      "ms-python.python",
+      "ms-vscode-remote.remote-wsl",
+      "ms-vscode.csharp",
+      "ms-vscode.node-debug",
+      "ms-vscode.node-debug2",
+      "ms-vscode.powershell",
+      "ms-vscode.references-view",
+      "msjsdiag.debugger-for-chrome",
+      "redhat.vscode-yaml",
+      "sibiraj-s.vscode-scss-formatter",
+      "tht13.python",
+      "ms-vscode.vscode-typescript-tslint-plugin"
+    ]
+  },
+  "launch": {
+    "configurations": [],
+    "compounds": []
+  },
+  "remoteAuthority": "",
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": []
+  }
 }

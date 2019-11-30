@@ -26,6 +26,7 @@ choco install firefox
 choco install chromium
 choco install googledrive
 choco install k-litecodecpackfull
+choco install hyper
 choco upgrade all
 
 
