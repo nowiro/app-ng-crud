@@ -1,0 +1,10 @@
+# ===============
+sudo systemctl restart systemd-timesyncd.service
+sudo apt update
+sudo apt upgrade
+sudo apt autoremove
+# ===============
+# https://docs.projectcalico.org/getting-started/kubernetes/quickstart
+# ===============
+kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+watch kubectl get pods --all-namespaces

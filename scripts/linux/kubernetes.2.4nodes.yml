@@ -1,0 +1,14 @@
+# ===============
+sudo systemctl restart systemd-timesyncd.service
+sudo apt update
+sudo apt upgrade
+sudo apt autoremove
+# ===============
+
+# ===============
+# https://linuxconfig.org/how-to-install-kubernetes-on-ubuntu-20-04-focal-fossa-linux
+# Set hostnames
+# ===============
+sudo hostnamectl set-hostname kubernetes-node-1
+# kubeadm join 172.17.228.146:6443 --token ebhd0l.h393h0vcum6pvzmj --discovery-token-ca-cert-hash sha256:0c351837be7c631e9807509c60754e1dc8da41901dd033ffc61f56af91d34728
+# ===============

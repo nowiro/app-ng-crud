@@ -1,0 +1,31 @@
+# ===============
+sudo systemctl restart systemd-timesyncd.service
+sudo apt update
+sudo apt upgrade
+sudo apt autoremove
+# ===============
+
+# ===============
+# git
+# ===============
+sudo apt-get install git
+sudo apt update
+# ===============
+
+# ===============
+# https://linuxconfig.org/how-to-install-kubernetes-on-ubuntu-20-04-focal-fossa-linux
+# ===============
+sudo apt install docker.io
+sudo apt update
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo apt install apt-transport-https curl
+sudo apt update
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
+sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+sudo apt update
+sudo apt install kubeadm kubelet kubectl kubernetes-cni
+sudo apt update
+sudo swapoff -a
+sudo nano /etc/fstab
+# ===============

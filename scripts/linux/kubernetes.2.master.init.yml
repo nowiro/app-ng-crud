@@ -1,0 +1,20 @@
+# ===============
+sudo systemctl restart systemd-timesyncd.service
+sudo apt update
+sudo apt upgrade
+sudo apt autoremove
+# ===============
+
+# ===============
+# https://linuxconfig.org/how-to-install-kubernetes-on-ubuntu-20-04-focal-fossa-linux
+# Set hostnames
+# ===============
+sudo hostnamectl set-hostname kubernetes-master
+sudo kubeadm init --pod-network-cidr=192.168.0.0/16
+sudo apt update
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+# kubectl get pods --all-namespaces -w
+watch kubectl get pods --all-namespaces
+# ===============

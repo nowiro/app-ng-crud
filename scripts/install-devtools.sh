@@ -1,11 +1,14 @@
 npm install -g yarn
-#Angular CLI
+# Angular CLI
 yarn global add @angular/cli 
-#Angular CLI
+# webpack CLI
 yarn global add webpack-cli
-#npm-check-updates
+# npm-check-updates
 yarn global add npm-check-updates
 #If you have issue with ncu use: Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+# install NPX
+yarn global add npx
 
 #TypeScript
 yarn global add typescript

@@ -1,0 +1,11 @@
+# ===============
+sudo systemctl restart systemd-timesyncd.service
+sudo apt update
+sudo apt upgrade
+sudo apt autoremove
+# ===============
+# https://docs.projectcalico.org/getting-started/kubernetes/quickstart
+# ===============
+kubectl taint nodes --all node-role.kubernetes.io/master-
+
+kubectl get nodes -o wide
